@@ -21,15 +21,36 @@ code you want to profile then dig it out now
 
 ## Using From The Command Line
 
+	perl -MDevel::NYTProf ...
 
 ## Using Within A Script (start/stop/etc)
 
+	use Devel::NYTProf;
+
+ * Defer start
+ * Early stop
 
 ## Viewing Profile
 
+ * Flame graph
+ * Top subroutine calls
+ * All subroutine calls
+ * Graphviz
 
 ## Digging Into The Details
 
+ * Exploring code
+
+## Looking For Optimisation Points
+
+ * Frequently called subroutines / lines
+ * Large Inclusive / Exclusive times
+ * Deep subroutine stacks
+ * Blocking
+ * DRY
+ * Accessors in loops
+ * Things we can cache, memoize
+ * Lazy loading in single run scripts
 
 ## Framework plugins
 
