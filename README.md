@@ -52,17 +52,35 @@ code you want to profile then dig it out now
 
 ## Looking For Optimisation Points
 
+Examine
+
  * Frequently called subroutines / lines
  * Large Inclusive / Exclusive times
  * Deep subroutine stacks
 
+Simple
+
  * DRY
  * Move accessors out of loops
  * Lazy logging: ->logger->debug( sub { ... } ); # when dumping structs
+ * Unpacking args in hot subs
+ * Unnecessary capturing in regex
 
+May introduce bugs
+
+ * Known workloads
  * Things we can cache or memoize
  * Lazy loading in single run scripts
- * Blocking
+ * Rebuild perl (no threads, no debugging, etc)
+
+Will introduce bugs (unless you have comprehensive tests)
+
+ * Push loops down
+ * Use faster modules, ::Tiny ::Fast
+ * Hash <-> Array (better algorithms)
+ * Inline::C, XS
+ * Non-blocking
+ * Small changes add up
 
 ## Framework plugins
 
